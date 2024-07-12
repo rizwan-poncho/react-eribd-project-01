@@ -115,7 +115,7 @@ const HeaderComponent =  () => {
           </li>
         </ul>
             </div>
-            <p>hello</p>
+          
           </div>
         
       </div>
