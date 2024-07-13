@@ -18,7 +18,7 @@ function Contact() {
   return (
     <>
     <p>Loading from Contact page</p>
-    <HeaderComponent/>
+    <Header/>
     </>
   )
 }

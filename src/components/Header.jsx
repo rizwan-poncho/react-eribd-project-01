@@ -2,11 +2,11 @@ import React from 'react';
 import { useEffect } from "react";
 // index.js or App.js
 import 'tw-elements';
-import logo from "../assets/eri-logo-full.png"
+import logo from "../assets/bpccilogo.png"
 
 import { Tooltip, initTWE,  Collapse,
   Ripple, } from "tw-elements";
-const HeaderComponent =  () => {
+const Header =  () => {
 
     useEffect(() => {
         initTWE({ Tooltip,Collapse, Ripple });
@@ -55,9 +55,9 @@ const HeaderComponent =  () => {
         class="!visible hidden grow basis-[100%] items-center text-center lg:!flex lg:basis-auto lg:text-left"
         id="navbarSupportedContentY"
         data-twe-collapse-item>
-          <div className='flex w-full md:justify-between justify-center mt-3 md:mt-0 md:items-center w-full'>
+          <div className='flex w-full md:justify-between justify-center mt-3 md:mt-0 md:items-center '>
             <div className='md:block hidden'>
-             <img src={logo} className='h-12 object-contain'  />
+             <img src={logo} className='h-16 object-contain'  />
             </div>
             <div>
             <ul
@@ -65,52 +65,52 @@ const HeaderComponent =  () => {
           data-twe-navbar-nav-ref>
           <li class="mb-4 lg:mb-0 lg:pe-2" data-twe-nav-item-ref>
             <a
-              class="block uppercase text-blue-800 tracking-wide font-semibold transition duration-200 hover:text-black/80 hover:ease-in-out focus:text-black/80 active:text-black/80 motion-reduce:transition-none dark:text-white/60 dark:hover:text-white/80 dark:focus:text-white/80 dark:active:text-white/80 lg:px-2"
+              class="block uppercase text-green-700 tracking-wide font-semibold transition duration-200 hover:text-black/80 hover:ease-in-out focus:text-black/80 active:text-black/80 motion-reduce:transition-none  lg:px-2"
               href="#!"
               data-twe-nav-link-ref
               data-twe-ripple-init
               data-twe-ripple-color="light"
-              >Company</a
+              >Home</a
             >
           </li>
           <li class="mb-4 lg:mb-0 lg:pe-2" data-twe-nav-item-ref>
             <a
-              class="block uppercase text-blue-800 tracking-wide font-semibold transition duration-200 hover:text-black/80 hover:ease-in-out focus:text-black/80 active:text-black/80 motion-reduce:transition-none dark:text-white/60 dark:hover:text-white/80 dark:focus:text-white/80 dark:active:text-white/80 lg:px-2"
+              class="block uppercase text-green-700 tracking-wide font-semibold transition duration-200 hover:text-black/80 hover:ease-in-out focus:text-black/80 active:text-black/80 motion-reduce:transition-none  lg:px-2"
               href="#!"
               data-twe-nav-link-ref
               data-twe-ripple-init
               data-twe-ripple-color="light"
-              >Services</a
+              >About Us</a
             >
           </li>
           <li class="mb-4 lg:mb-0 lg:pe-2" data-twe-nav-item-ref>
             <a
-              class="block uppercase text-blue-800 tracking-wide font-semibold transition duration-200 hover:text-black/80 hover:ease-in-out focus:text-black/80 active:text-black/80 motion-reduce:transition-none dark:text-white/60 dark:hover:text-white/80 dark:focus:text-white/80 dark:active:text-white/80 lg:px-2"
+              class="block uppercase text-green-700 tracking-wide font-semibold transition duration-200 hover:text-black/80 hover:ease-in-out focus:text-black/80 active:text-black/80 motion-reduce:transition-none  lg:px-2"
               href="#!"
               data-twe-nav-link-ref
               data-twe-ripple-init
               data-twe-ripple-color="light"
-              >Project</a
+              >Membership</a
             >
           </li>
           <li class="mb-2 lg:mb-0 lg:pe-2" data-twe-nav-item-ref>
             <a
-              class="block uppercase text-blue-800 tracking-wide font-semibold transition duration-200 hover:text-black/80 hover:ease-in-out focus:text-black/80 active:text-black/80 motion-reduce:transition-none dark:text-white/60 dark:hover:text-white/80 dark:focus:text-white/80 dark:active:text-white/80 lg:px-2"
+              class="block uppercase text-green-700 tracking-wide font-semibold transition duration-200 hover:text-black/80 hover:ease-in-out focus:text-black/80 active:text-black/80 motion-reduce:transition-none  lg:px-2"
               href="#!"
               data-twe-nav-link-ref
               data-twe-ripple-init
               data-twe-ripple-color="light"
-              >Certificate</a
+              >News & Publication</a
             >
           </li>
           <li class="mb-2 lg:mb-0 lg:pe-2" data-twe-nav-item-ref>
             <a
-              class="block uppercase text-blue-800 tracking-wide font-semibold transition duration-200 hover:text-black/80 hover:ease-in-out focus:text-black/80 active:text-black/80 motion-reduce:transition-none dark:text-white/60 dark:hover:text-white/80 dark:focus:text-white/80 dark:active:text-white/80 lg:px-2"
+              class="block uppercase text-green-700 tracking-wide font-semibold transition duration-200 hover:text-black/80 hover:ease-in-out focus:text-black/80 active:text-black/80 motion-reduce:transition-none  lg:px-2"
               href="#!"
               data-twe-nav-link-ref
               data-twe-ripple-init
               data-twe-ripple-color="light"
-              >Contact</a
+              >Gallery</a
             >
           </li>
         </ul>
@@ -126,4 +126,4 @@ const HeaderComponent =  () => {
   );
 };
 
-export default HeaderComponent;
+export default Header;
