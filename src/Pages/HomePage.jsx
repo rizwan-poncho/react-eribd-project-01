@@ -12,11 +12,11 @@ const HomePage = () => {
    
   return (
     <>
+
+    {/* Slider */}
     <Swiper
       pagination={{ clickable: true }}
       modules={[Navigation, Pagination, Scrollbar, A11y,Autoplay]}
-      onSlideChange={() => console.log('slide change')}
-      onSwiper={(swiper) => console.log(swiper)}
       loop={true}
       navigation={true}
       autoplay={{
@@ -34,6 +34,9 @@ const HomePage = () => {
         )
       })}
     </Swiper>
+
+
+    
     </>
   );
 };
