@@ -4,8 +4,10 @@ import { useEffect } from "react";
 import 'tw-elements';
 import logo from "../assets/bpccilogo.png"
 
+
 import { Tooltip, initTWE,  Collapse,
   Ripple, } from "tw-elements";
+import { Link } from 'react-router-dom';
 const Header =  () => {
 
     useEffect(() => {
@@ -16,7 +18,7 @@ const Header =  () => {
     <>
 <header>
   <nav
-    class="relative lg:px-20  flex w-full items-center justify-between bg-white py-2 shadow-dark-mild dark:bg-body-dark lg:flex-wrap lg:justify-start lg:py-6"
+    class="relative lg:px-20  flex w-full items-center justify-between bg-white py-2 shadow-dark-mild  lg:flex-wrap lg:justify-start lg:py-6"
     data-twe-navbar-ref>
     <div class="flex w-full flex-wrap items-center justify-between px-3">
       <div class="flex justify-between items-center w-full">
@@ -64,54 +66,50 @@ const Header =  () => {
           class="me-auto flex flex-col lg:flex-row"
           data-twe-navbar-nav-ref>
           <li class="mb-4 lg:mb-0 lg:pe-2" data-twe-nav-item-ref>
-            <a
+            <Link to={'/'}
               class="block uppercase text-green-700 tracking-wide font-semibold transition duration-200 hover:text-black/80 hover:ease-in-out focus:text-black/80 active:text-black/80 motion-reduce:transition-none  lg:px-2"
               href="#!"
               data-twe-nav-link-ref
               data-twe-ripple-init
               data-twe-ripple-color="light"
-              >Home</a
-            >
+              >Home</Link>
           </li>
           <li class="mb-4 lg:mb-0 lg:pe-2" data-twe-nav-item-ref>
-            <a
+            <Link to={'/about-us'}
+
               class="block uppercase text-green-700 tracking-wide font-semibold transition duration-200 hover:text-black/80 hover:ease-in-out focus:text-black/80 active:text-black/80 motion-reduce:transition-none  lg:px-2"
               href="#!"
               data-twe-nav-link-ref
               data-twe-ripple-init
               data-twe-ripple-color="light"
-              >About Us</a
-            >
+              >About Us</Link>
           </li>
           <li class="mb-4 lg:mb-0 lg:pe-2" data-twe-nav-item-ref>
-            <a
+            <Link to={'/membership'}
               class="block uppercase text-green-700 tracking-wide font-semibold transition duration-200 hover:text-black/80 hover:ease-in-out focus:text-black/80 active:text-black/80 motion-reduce:transition-none  lg:px-2"
               href="#!"
               data-twe-nav-link-ref
               data-twe-ripple-init
               data-twe-ripple-color="light"
-              >Membership</a
-            >
+              >Membership</Link>
           </li>
           <li class="mb-2 lg:mb-0 lg:pe-2" data-twe-nav-item-ref>
-            <a
+            <Link to={'/news-publication'}
               class="block uppercase text-green-700 tracking-wide font-semibold transition duration-200 hover:text-black/80 hover:ease-in-out focus:text-black/80 active:text-black/80 motion-reduce:transition-none  lg:px-2"
               href="#!"
               data-twe-nav-link-ref
               data-twe-ripple-init
               data-twe-ripple-color="light"
-              >News & Publication</a
-            >
+              >News & Publication</Link>
           </li>
           <li class="mb-2 lg:mb-0 lg:pe-2" data-twe-nav-item-ref>
-            <a
+            <Link to={'/gallery'}
               class="block uppercase text-green-700 tracking-wide font-semibold transition duration-200 hover:text-black/80 hover:ease-in-out focus:text-black/80 active:text-black/80 motion-reduce:transition-none  lg:px-2"
               href="#!"
               data-twe-nav-link-ref
               data-twe-ripple-init
               data-twe-ripple-color="light"
-              >Gallery</a
-            >
+              >Gallery</Link>
           </li>
         </ul>
             </div>
