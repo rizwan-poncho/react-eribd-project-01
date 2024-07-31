@@ -7,7 +7,7 @@ import logo from "../assets/bpccilogo.png"
 
 import { Tooltip, initTWE,  Collapse,
   Ripple, } from "tw-elements";
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 const Header =  () => {
 
     useEffect(() => {
@@ -66,50 +66,50 @@ const Header =  () => {
           class="me-auto flex flex-col lg:flex-row"
           data-twe-navbar-nav-ref>
           <li class="mb-4 lg:mb-0 lg:pe-2" data-twe-nav-item-ref>
-            <Link to={'/'}
-              class="block uppercase text-green-700 tracking-wide font-semibold transition duration-200 hover:text-black/80 hover:ease-in-out focus:text-black/80 active:text-black/80 motion-reduce:transition-none  lg:px-2"
+            <NavLink to={'/'}
+               className={({isActive}) =>(isActive ? "text-blue-700/80 motion-reduce:transition-none block uppercase font-semibold transition duration-200 hover:text-rose-500/80 hover:ease-in-out lg:px-2" : "block uppercase text-green-700 tracking-wide font-semibold transition duration-200 hover:text-black/80 hover:ease-in-out focus:text-black/80  lg:px-2")}
               href="#!"
               data-twe-nav-link-ref
               data-twe-ripple-init
               data-twe-ripple-color="light"
-              >Home</Link>
+              >Home</NavLink>
           </li>
           <li class="mb-4 lg:mb-0 lg:pe-2" data-twe-nav-item-ref>
-            <Link to={'/about-us'}
+            <NavLink to={'/about-us'}
 
-              class="block uppercase text-green-700 tracking-wide font-semibold transition duration-200 hover:text-black/80 hover:ease-in-out focus:text-black/80 active:text-black/80 motion-reduce:transition-none  lg:px-2"
+className={({isActive}) =>(isActive ? "text-blue-700/80 motion-reduce:transition-none block uppercase font-semibold transition duration-200 hover:text-rose-500/80 hover:ease-in-out lg:px-2" : "block uppercase text-green-700 tracking-wide font-semibold transition duration-200 hover:text-black/80 hover:ease-in-out focus:text-black/80  lg:px-2")}
               href="#!"
               data-twe-nav-link-ref
               data-twe-ripple-init
               data-twe-ripple-color="light"
-              >About Us</Link>
+              >About Us</NavLink>
           </li>
           <li class="mb-4 lg:mb-0 lg:pe-2" data-twe-nav-item-ref>
-            <Link to={'/membership'}
-              class="block uppercase text-green-700 tracking-wide font-semibold transition duration-200 hover:text-black/80 hover:ease-in-out focus:text-black/80 active:text-black/80 motion-reduce:transition-none  lg:px-2"
+            <NavLink to={'/membership'}
+             className={({isActive}) =>(isActive ? "text-blue-700/80 motion-reduce:transition-none block uppercase font-semibold transition duration-200 hover:text-rose-500/80 hover:ease-in-out lg:px-2" : "block uppercase text-green-700 tracking-wide font-semibold transition duration-200 hover:text-black/80 hover:ease-in-out focus:text-black/80  lg:px-2")}
               href="#!"
               data-twe-nav-link-ref
               data-twe-ripple-init
               data-twe-ripple-color="light"
-              >Membership</Link>
+              >Membership</NavLink>
           </li>
           <li class="mb-2 lg:mb-0 lg:pe-2" data-twe-nav-item-ref>
-            <Link to={'/news-publication'}
-              class="block uppercase text-green-700 tracking-wide font-semibold transition duration-200 hover:text-black/80 hover:ease-in-out focus:text-black/80 active:text-black/80 motion-reduce:transition-none  lg:px-2"
+            <NavLink to={'/news-publication'}
+             className={({isActive}) =>(isActive ? "text-blue-700/80 motion-reduce:transition-none block uppercase font-semibold transition duration-200 hover:text-rose-500/80 hover:ease-in-out lg:px-2" : "block uppercase text-green-700 tracking-wide font-semibold transition duration-200 hover:text-black/80 hover:ease-in-out focus:text-black/80  lg:px-2")}
               href="#!"
               data-twe-nav-link-ref
               data-twe-ripple-init
               data-twe-ripple-color="light"
-              >News & Publication</Link>
+              >News & Publication</NavLink>
           </li>
           <li class="mb-2 lg:mb-0 lg:pe-2" data-twe-nav-item-ref>
-            <Link to={'/gallery'}
-              class="block uppercase text-green-700 tracking-wide font-semibold transition duration-200 hover:text-black/80 hover:ease-in-out focus:text-black/80 active:text-black/80 motion-reduce:transition-none  lg:px-2"
+            <NavLink to={'/gallery'}
+              className={({isActive}) =>(isActive ? "text-blue-700/80 motion-reduce:transition-none block uppercase lg:px-2 font-semibold transition duration-200 hover:text-rose-500/80 hover:ease-in-out " : "block uppercase text-green-700 tracking-wide font-semibold transition duration-200 hover:text-black/80 hover:ease-in-out focus:text-black/80  lg:px-2")}
               href="#!"
               data-twe-nav-link-ref
               data-twe-ripple-init
               data-twe-ripple-color="light"
-              >Gallery</Link>
+              >Gallery</NavLink>
           </li>
         </ul>
             </div>
