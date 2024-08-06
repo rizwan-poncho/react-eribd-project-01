@@ -140,7 +140,7 @@ const Header = () => {
                         }}
                       >
                         <MenuItem onClick={handleClose1}>
-                        <NavLink>
+                        <NavLink to={"/about-us"}>
                           About BPCCI
                         </NavLink>
                         </MenuItem>
