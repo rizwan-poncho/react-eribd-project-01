@@ -1,12 +1,33 @@
 import React from "react";
 import { useEffect } from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
 // index.js or App.js
 import "tw-elements";
 import logo from "../assets/bpccilogo.png";
-
+import Button from "@mui/material/Button";
+import Menu from "@mui/material/Menu";
+import MenuItem from "@mui/material/MenuItem";
 import { Tooltip, initTWE, Collapse, Ripple } from "tw-elements";
-import {  NavLink } from "react-router-dom";
+import { NavLink } from "react-router-dom";
+import { faCaretDown } from "@fortawesome/free-solid-svg-icons";
 const Header = () => {
+  const [anchorEl1, setAnchorEl1] = React.useState(null);
+  const [anchorEl2, setAnchorEl2] = React.useState(null);
+  const open1 = Boolean(anchorEl1);
+  const open2 = Boolean(anchorEl2);
+  const handleClick1 = (event) => {
+    setAnchorEl1(event.currentTarget);
+  };
+  const handleClick2 = (event) => {
+    setAnchorEl2(event.currentTarget);
+  };
+  const handleClose1= () => {
+    setAnchorEl1(null);
+  };
+  const handleClose2= () => {
+    setAnchorEl2(null);
+  };
   useEffect(() => {
     initTWE({ Tooltip, Collapse, Ripple });
   }, []);
@@ -66,10 +87,14 @@ const Header = () => {
                     class="me-auto flex flex-col lg:flex-row"
                     data-twe-navbar-nav-ref
                   >
-                    <li class="mb-4 lg:mb-0 lg:pe-2" data-twe-nav-item-ref>
+                     <li class="mb-4 lg:mb-0 lg:pe-2" data-twe-nav-item-ref>
                       <NavLink
                         to={"/"}
-                        className={({ isActive }) => (isActive ? "block uppercase text-black-700 tracking-wide font-semibold transition duration-200 hover:text-black/80 hover:ease-in-out focus:text-black/80 active:text-black/80 motion-reduce:transition-none  lg:px-2" : "block uppercase text-green-700 tracking-wide font-semibold transition duration-200 hover:text-black/80 hover:ease-in-out focus:text-black/80 active:text-black/80 motion-reduce:transition-none  lg:px-2")}
+                        className={({ isActive }) =>
+                          isActive
+                            ? "block uppercase text-black-700 tracking-wide font-semibold transition duration-200 hover:text-black/80 hover:ease-in-out focus:text-black/80 active:text-black/80 motion-reduce:transition-none  lg:px-2"
+                            : "block uppercase text-green-700 tracking-wide font-semibold transition duration-200 hover:text-black/80 hover:ease-in-out focus:text-black/80 active:text-black/80 motion-reduce:transition-none  lg:px-2"
+                        }
                         data-twe-nav-link-ref
                         data-twe-ripple-init
                         data-twe-ripple-color="light"
@@ -79,33 +104,117 @@ const Header = () => {
                     </li>
                     <li class="mb-4 lg:mb-0 lg:pe-2" data-twe-nav-item-ref>
                       <NavLink
-                        to={"/about-us"}
-                        
-
-                        className={({ isActive }) => (isActive ? "block uppercase text-black-700 tracking-wide font-semibold transition duration-200 hover:text-black/80 hover:ease-in-out focus:text-black/80 active:text-black/80 motion-reduce:transition-none  lg:px-2" : "block uppercase text-green-700 tracking-wide font-semibold transition duration-200 hover:text-black/80 hover:ease-in-out focus:text-black/80 active:text-black/80 motion-reduce:transition-none  lg:px-2")}
+                       aria-controls={open ? "basic-menu" : undefined}
+                       aria-haspopup="true"
+                       aria-expanded={open ? "true" : undefined}
+                       onClick={handleClick1}
+                       
+                        className="block uppercase text-green-700 tracking-wide font-semibold transition duration-200 hover:text-black/80 hover:ease-in-out  active:text-black/80 motion-reduce:transition-none  lg:px-2"
                         data-twe-nav-link-ref
                         data-twe-ripple-init
                         data-twe-ripple-color="light"
-                        end
                       >
-                        About Us
+                      {({ isActive }) => (
+                          <>
+                           About Us {" "}
+                            <FontAwesomeIcon  
+                        
+                              icon={faCaretDown}
+                              className={
+                                isActive ? "text-black-700" : "text-green-700"
+                              }
+                              style={{ transition: "color 0.2s ease-in-out" }}
+                            />
+                          </>
+                        )}
                       </NavLink>
+                  
+
+                      <Menu
+                        
+                        anchorEl={anchorEl1}
+                        open={open1}
+                        onClose={handleClose1}
+                        MenuListProps={{
+                          "aria-labelledby": "basic-button",
+                        }}
+                      >
+                        <MenuItem onClick={handleClose1}>
+                        <NavLink>
+                          About BPCCI
+                        </NavLink>
+                        </MenuItem>
+                        <MenuItem onClick={handleClose1}><NavLink>
+                          Welcome Message
+                        </NavLink></MenuItem>
+                        <MenuItem onClick={handleClose1}><NavLink>
+                          Board of Director
+                        </NavLink></MenuItem>
+                        <MenuItem onClick={handleClose1}><NavLink>
+                          Secretariat
+                        </NavLink></MenuItem>
+                      </Menu>
                     </li>
                     <li class="mb-4 lg:mb-0 lg:pe-2" data-twe-nav-item-ref>
                       <NavLink
-                        to={"/membership"}
-                        className={({ isActive }) => (isActive ? "block uppercase text-black-700 tracking-wide font-semibold transition duration-200 hover:text-black/80 hover:ease-in-out focus:text-black/80 active:text-black/80 motion-reduce:transition-none  lg:px-2" : "block uppercase text-green-700 tracking-wide font-semibold transition duration-200 hover:text-black/80 hover:ease-in-out focus:text-black/80 active:text-black/80 motion-reduce:transition-none  lg:px-2")}
+                       
+                       aria-controls={open ? "basic-menu" : undefined}
+                       aria-haspopup="true"
+                       aria-expanded={open ? "true" : undefined}
+                       onClick={handleClick2}
+                        className="block uppercase text-green-700 tracking-wide font-semibold transition duration-200 hover:text-black/80 hover:ease-in-out  active:text-black/80 motion-reduce:transition-none  lg:px-2"
                         data-twe-nav-link-ref
                         data-twe-ripple-init
                         data-twe-ripple-color="light"
                       >
-                        Membership
+                      {({ isActive }) => (
+                          <>
+                           Membership {" "}
+                            <FontAwesomeIcon 
+                       
+                              icon={faCaretDown}
+                              className={
+                                isActive ? "text-black-700" : "text-green-700"
+                              }
+                              style={{ transition: "color 0.2s ease-in-out" }}
+                            />
+                          </>
+                        )}
                       </NavLink>
+                  
+
+                      <Menu
+                        anchorEl={anchorEl2}
+                        open={open2}
+                        onClose={handleClose2}
+                        MenuListProps={{
+                          "aria-labelledby": "basic-button",
+                        }}
+                      >
+                        <MenuItem onClick={handleClose2}>
+                        <NavLink>
+                          Type of Memebership
+                        </NavLink>
+                        </MenuItem>
+                        <MenuItem onClick={handleClose2}><NavLink>
+                          Memebership Procedure
+                        </NavLink></MenuItem>
+                        <MenuItem onClick={handleClose2}><NavLink>
+                          Membership Form Download
+                        </NavLink></MenuItem>
+                       
+                      </Menu>
                     </li>
+                    
+                  
                     <li class="mb-2 lg:mb-0 lg:pe-2" data-twe-nav-item-ref>
                       <NavLink
                         to={"/news-publication"}
-                        className={({ isActive }) => (isActive ? "block uppercase text-black-700 tracking-wide font-semibold transition duration-200 hover:text-black/80 hover:ease-in-out focus:text-black/80 active:text-black/80 motion-reduce:transition-none  lg:px-2" : "block uppercase text-green-700 tracking-wide font-semibold transition duration-200 hover:text-black/80 hover:ease-in-out focus:text-black/80 active:text-black/80 motion-reduce:transition-none  lg:px-2")}
+                        className={({ isActive }) =>
+                          isActive
+                            ? "block uppercase text-black-700 tracking-wide font-semibold transition duration-200 hover:text-black/80 hover:ease-in-out focus:text-black/80 active:text-black/80 motion-reduce:transition-none  lg:px-2"
+                            : "block uppercase text-green-700 tracking-wide font-semibold transition duration-200 hover:text-black/80 hover:ease-in-out focus:text-black/80 active:text-black/80 motion-reduce:transition-none  lg:px-2"
+                        }
                         data-twe-nav-link-ref
                         data-twe-ripple-init
                         data-twe-ripple-color="light"
@@ -116,7 +225,11 @@ const Header = () => {
                     <li class="mb-2 lg:mb-0 lg:pe-2" data-twe-nav-item-ref>
                       <NavLink
                         to={"/gallery"}
-                        className={({ isActive }) => (isActive ? "block uppercase text-black-700 tracking-wide font-semibold transition duration-200 hover:text-black/80 hover:ease-in-out focus:text-black/80 active:text-black/80 motion-reduce:transition-none  lg:px-2" : "block uppercase text-green-700 tracking-wide font-semibold transition duration-200 hover:text-black/80 hover:ease-in-out focus:text-black/80 active:text-black/80 motion-reduce:transition-none  lg:px-2")}
+                        className={({ isActive }) =>
+                          isActive
+                            ? "block uppercase text-black-700 tracking-wide font-semibold transition duration-200 hover:text-black/80 hover:ease-in-out focus:text-black/80 active:text-black/80 motion-reduce:transition-none  lg:px-2"
+                            : "block uppercase text-green-700 tracking-wide font-semibold transition duration-200 hover:text-black/80 hover:ease-in-out focus:text-black/80 active:text-black/80 motion-reduce:transition-none  lg:px-2"
+                        }
                         data-twe-nav-link-ref
                         data-twe-ripple-init
                         data-twe-ripple-color="light"
@@ -136,5 +249,3 @@ const Header = () => {
 };
 
 export default Header;
-
-
