@@ -44,7 +44,16 @@ const AboutUs = () => {
       {/* Banner Section */}
       <div className="relative mb-16">
         <img className="w-full" src={aboutUsBanner} alt="About Us Banner" />
-        <h1 className="absolute text-2xl font-bold text-green-600 transform -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 sm:text-3xl md:text-5xl lg:text-5xl">
+        <h1
+          className="text-2xl font-bold text-green-600 sm:text-3xl md:text-5xl lg:text-5xl"
+          style={{
+            position: "absolute",
+            top: "50%",
+            left: "20%",
+            transform: "translate(-50%, -50%)",
+            margin: 0,
+          }}
+        >
           ABOUT BPCCI
         </h1>
       </div>
