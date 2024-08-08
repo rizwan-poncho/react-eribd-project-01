@@ -147,7 +147,8 @@ const Header = () => {
                         <MenuItem onClick={handleClose1}><NavLink>
                           Welcome Message
                         </NavLink></MenuItem>
-                        <MenuItem onClick={handleClose1}><NavLink>
+                        <MenuItem onClick={handleClose1}>
+                        <NavLink to={"/board-of-director"}>
                           Board of Director
                         </NavLink></MenuItem>
                         <MenuItem onClick={handleClose1}>
