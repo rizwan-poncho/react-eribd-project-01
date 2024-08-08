@@ -41,8 +41,8 @@ const Header = () => {
         >
           <div class="flex w-full flex-wrap items-center justify-between px-3">
             <div class="flex justify-between items-center w-full">
-              <div className="md:hidden block">
-                <img src={logo} className="h-12 object-contain" />
+              <div className="block md:hidden">
+                <img src={logo} className="object-contain h-12" />
               </div>
               <div>
                 <button
@@ -78,9 +78,9 @@ const Header = () => {
               id="navbarSupportedContentY"
               data-twe-collapse-item
             >
-              <div className="flex w-full md:justify-between justify-center mt-3 md:mt-0 md:items-center ">
-                <div className="md:block hidden">
-                  <img src={logo} className="h-16 object-contain" />
+              <div className="flex justify-center w-full mt-3 md:justify-between md:mt-0 md:items-center ">
+                <div className="hidden md:block">
+                  <img src={logo} className="object-contain h-16" />
                 </div>
                 <div>
                   <ul
@@ -109,7 +109,7 @@ const Header = () => {
                        aria-expanded={open ? "true" : undefined}
                        onClick={handleClick1}
                        
-                        className="block uppercase text-green-700 tracking-wide font-semibold transition duration-200 hover:text-black/80 hover:ease-in-out  active:text-black/80 motion-reduce:transition-none  lg:px-2"
+                        className="block font-semibold tracking-wide text-green-700 uppercase transition duration-200 hover:text-black/80 hover:ease-in-out active:text-black/80 motion-reduce:transition-none lg:px-2"
                         data-twe-nav-link-ref
                         data-twe-ripple-init
                         data-twe-ripple-color="light"
@@ -150,7 +150,8 @@ const Header = () => {
                         <MenuItem onClick={handleClose1}><NavLink>
                           Board of Director
                         </NavLink></MenuItem>
-                        <MenuItem onClick={handleClose1}><NavLink>
+                        <MenuItem onClick={handleClose1}>
+                        <NavLink to={"/secretariat"}>
                           Secretariat
                         </NavLink></MenuItem>
                       </Menu>
@@ -162,7 +163,7 @@ const Header = () => {
                        aria-haspopup="true"
                        aria-expanded={open ? "true" : undefined}
                        onClick={handleClick2}
-                        className="block uppercase text-green-700 tracking-wide font-semibold transition duration-200 hover:text-black/80 hover:ease-in-out  active:text-black/80 motion-reduce:transition-none  lg:px-2"
+                        className="block font-semibold tracking-wide text-green-700 uppercase transition duration-200 hover:text-black/80 hover:ease-in-out active:text-black/80 motion-reduce:transition-none lg:px-2"
                         data-twe-nav-link-ref
                         data-twe-ripple-init
                         data-twe-ripple-color="light"

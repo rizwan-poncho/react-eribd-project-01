@@ -7,6 +7,7 @@ import AboutUs from "../Pages/AboutUs";
 import Membership from "../Pages/Membership";
 import NewsAndPublication from "../Pages/NewsAndPublication";
 import Gallery from "../Pages/Gallery";
+import Secretariat from "../Pages/Secretariat";
 
 const router = createBrowserRouter([
     {
@@ -19,6 +20,7 @@ const router = createBrowserRouter([
         { path: "/membership", element: <Membership/>},
         { path: "/news-publication", element: <NewsAndPublication/>},
         { path: "/gallery", element: <Gallery/>},
+        { path: "/secretariat", element: <Secretariat/>},
         
       ]
     },
