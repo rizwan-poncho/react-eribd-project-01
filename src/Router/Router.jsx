@@ -11,6 +11,7 @@ import Secretariat from "../Pages/Secretariat";
 import PresedentMessage from "../Pages/PresedentMessage";
 import AmbassadorBd from "../Pages/AmbassadorBd";
 import AmbassadorPh from "../Pages/AmbassadorPh";
+import BoardOfDirector from "../Pages/BoardOfDirector";
 
 const router = createBrowserRouter([
     {
@@ -27,6 +28,7 @@ const router = createBrowserRouter([
         { path: "/news-publication", element: <NewsAndPublication/>},
         { path: "/gallery", element: <Gallery/>},
         { path: "/secretariat", element: <Secretariat/>},
+        { path: "/boardofdirector", element: <BoardOfDirector/>},
         
       ]
     },
