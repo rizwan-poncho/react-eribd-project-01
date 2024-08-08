@@ -14,19 +14,27 @@ import { faCaretDown } from "@fortawesome/free-solid-svg-icons";
 const Header = () => {
   const [anchorEl1, setAnchorEl1] = React.useState(null);
   const [anchorEl2, setAnchorEl2] = React.useState(null);
+  const [anchorEl3, setAnchorEl3] = React.useState(null);
   const open1 = Boolean(anchorEl1);
   const open2 = Boolean(anchorEl2);
+  const open3 = Boolean(anchorEl3);
   const handleClick1 = (event) => {
     setAnchorEl1(event.currentTarget);
   };
   const handleClick2 = (event) => {
     setAnchorEl2(event.currentTarget);
   };
-  const handleClose1= () => {
+  const handleClick3 = (event) => {
+    setAnchorEl3(event.currentTarget);
+  };
+  const handleClose1 = () => {
     setAnchorEl1(null);
   };
-  const handleClose2= () => {
+  const handleClose2 = () => {
     setAnchorEl2(null);
+  };
+  const handleClose3 = () => {
+    setAnchorEl3(null);
   };
   useEffect(() => {
     initTWE({ Tooltip, Collapse, Ripple });
@@ -87,7 +95,7 @@ const Header = () => {
                     class="me-auto flex flex-col lg:flex-row"
                     data-twe-navbar-nav-ref
                   >
-                     <li class="mb-4 lg:mb-0 lg:pe-2" data-twe-nav-item-ref>
+                    <li class="mb-4 lg:mb-0 lg:pe-2" data-twe-nav-item-ref>
                       <NavLink
                         to={"/"}
                         className={({ isActive }) =>
@@ -104,21 +112,19 @@ const Header = () => {
                     </li>
                     <li class="mb-4 lg:mb-0 lg:pe-2" data-twe-nav-item-ref>
                       <NavLink
-                       aria-controls={open ? "basic-menu" : undefined}
-                       aria-haspopup="true"
-                       aria-expanded={open ? "true" : undefined}
-                       onClick={handleClick1}
-                       
+                        aria-controls={open ? "basic-menu" : undefined}
+                        aria-haspopup="true"
+                        aria-expanded={open ? "true" : undefined}
+                        onClick={handleClick1}
                         className="block font-semibold tracking-wide text-green-700 uppercase transition duration-200 hover:text-black/80 hover:ease-in-out active:text-black/80 motion-reduce:transition-none lg:px-2"
                         data-twe-nav-link-ref
                         data-twe-ripple-init
                         data-twe-ripple-color="light"
                       >
-                      {({ isActive }) => (
+                        {({ isActive }) => (
                           <>
-                           About Us {" "}
-                            <FontAwesomeIcon  
-                        
+                            About Us{" "}
+                            <FontAwesomeIcon
                               icon={faCaretDown}
                               className={
                                 isActive ? "text-black-700" : "text-green-700"
@@ -128,10 +134,8 @@ const Header = () => {
                           </>
                         )}
                       </NavLink>
-                  
 
                       <Menu
-                        
                         anchorEl={anchorEl1}
                         open={open1}
                         onClose={handleClose1}
@@ -140,39 +144,91 @@ const Header = () => {
                         }}
                       >
                         <MenuItem onClick={handleClose1}>
-                        <NavLink to={"/about-us"}>
-                          About BPCCI
-                        </NavLink>
+                          <NavLink to={"/about-us"}>About BPCCI</NavLink>
                         </MenuItem>
-                        <MenuItem onClick={handleClose1}><NavLink>
-                          Welcome Message
-                        </NavLink></MenuItem>
-                        <MenuItem onClick={handleClose1}><NavLink>
-                          Board of Director
-                        </NavLink></MenuItem>
+
+                        <MenuItem onClick={handleClick3}>
+                          <NavLink
+                            aria-controls={open3 ? "basic-menu" : undefined}
+                            aria-haspopup="true"
+                            aria-expanded={open3 ? "true" : undefined}
+                            onClick={handleClick3}
+                            className={`block font-semibold tracking-wide text-green-700 uppercase transition duration-200 hover:text-black/80 hover:ease-in-out active:text-black/80 motion-reduce:transition-none`}
+                            data-twe-nav-link-ref
+                            data-twe-ripple-init
+                            data-twe-ripple-color="light"
+                          >
+                            {({ isActive }) => (
+                              <>
+                                Welcome Message{" "}
+                                <FontAwesomeIcon
+                                  icon={faCaretDown}
+                                  className={
+                                    isActive
+                                      ? "text-black-700"
+                                      : "text-green-700"
+                                  }
+                                  style={{
+                                    transition: "color 0.2s ease-in-out",
+                                  }}
+                                />
+                              </>
+                            )}
+                          </NavLink>
+                        </MenuItem>
+
+                        <Menu
+                          anchorEl={anchorEl3}
+                          open={open3}
+                          onClose={handleClose3}
+                          MenuListProps={{
+                            "aria-labelledby": "basic-button",
+                          }}
+                          className={`relative w-4/5`}
+                          style={{ left: "235px" }}
+                        >
+                          <MenuItem onClick={handleClose3}>
+                            <NavLink to="/message-01" className={`hover:text-green-700 text-black`}>
+                              Message from the President
+                            </NavLink>
+                          </MenuItem>
+                          <MenuItem onClick={handleClose3}>
+                            <NavLink to="/message-02" className={`text-balance hover:text-green-700 text-black`}>
+                              Message from the Ambassador of Bangladesh to
+                              Philippines
+                            </NavLink>
+                          </MenuItem>
+                          <MenuItem onClick={handleClose3}>
+                            <NavLink to="/message-03" className={`text-balance hover:text-green-700 text-black`}>
+                              Message from the Ambassador of Philippines to
+                              Bangladesh
+                            </NavLink>
+                          </MenuItem>
+                        </Menu>
+
                         <MenuItem onClick={handleClose1}>
-                        <NavLink to={"/secretariat"}>
-                          Secretariat
-                        </NavLink></MenuItem>
+                          <NavLink>Board of Director</NavLink>
+                        </MenuItem>
+                        <MenuItem onClick={handleClose1}>
+                          <NavLink to={"/secretariat"}>Secretariat</NavLink>
+                        </MenuItem>
                       </Menu>
                     </li>
                     <li class="mb-4 lg:mb-0 lg:pe-2" data-twe-nav-item-ref>
                       <NavLink
-                       
-                       aria-controls={open ? "basic-menu" : undefined}
-                       aria-haspopup="true"
-                       aria-expanded={open ? "true" : undefined}
-                       onClick={handleClick2}
+                        aria-controls={open ? "basic-menu" : undefined}
+                        aria-haspopup="true"
+                        aria-expanded={open ? "true" : undefined}
+                        onClick={handleClick2}
                         className="block font-semibold tracking-wide text-green-700 uppercase transition duration-200 hover:text-black/80 hover:ease-in-out active:text-black/80 motion-reduce:transition-none lg:px-2"
                         data-twe-nav-link-ref
                         data-twe-ripple-init
                         data-twe-ripple-color="light"
                       >
-                      {({ isActive }) => (
+                        {({ isActive }) => (
                           <>
-                           Membership {" "}
-                            <FontAwesomeIcon 
-                       
+                            Membership{" "}
+                            <FontAwesomeIcon
                               icon={faCaretDown}
                               className={
                                 isActive ? "text-black-700" : "text-green-700"
@@ -182,7 +238,6 @@ const Header = () => {
                           </>
                         )}
                       </NavLink>
-                  
 
                       <Menu
                         anchorEl={anchorEl2}
@@ -193,21 +248,17 @@ const Header = () => {
                         }}
                       >
                         <MenuItem onClick={handleClose2}>
-                        <NavLink>
-                          Type of Memebership
-                        </NavLink>
+                          <NavLink>Type of Memebership</NavLink>
                         </MenuItem>
-                        <MenuItem onClick={handleClose2}><NavLink>
-                          Memebership Procedure
-                        </NavLink></MenuItem>
-                        <MenuItem onClick={handleClose2}><NavLink>
-                          Membership Form Download
-                        </NavLink></MenuItem>
-                       
+                        <MenuItem onClick={handleClose2}>
+                          <NavLink>Memebership Procedure</NavLink>
+                        </MenuItem>
+                        <MenuItem onClick={handleClose2}>
+                          <NavLink>Membership Form Download</NavLink>
+                        </MenuItem>
                       </Menu>
                     </li>
-                    
-                  
+
                     <li class="mb-2 lg:mb-0 lg:pe-2" data-twe-nav-item-ref>
                       <NavLink
                         to={"/news-publication"}

@@ -8,6 +8,9 @@ import Membership from "../Pages/Membership";
 import NewsAndPublication from "../Pages/NewsAndPublication";
 import Gallery from "../Pages/Gallery";
 import Secretariat from "../Pages/Secretariat";
+import PresedentMessage from "../Pages/PresedentMessage";
+import AmbassadorBd from "../Pages/AmbassadorBd";
+import AmbassadorPh from "../Pages/AmbassadorPh";
 
 const router = createBrowserRouter([
     {
@@ -17,6 +20,9 @@ const router = createBrowserRouter([
         { path: "/", element: <HomePage /> },
         { path: "*", element: <ErrorPage /> },
         { path: "/about-us", element: <AboutUs/>},
+        {path: "/message-01", element: <PresedentMessage/>},
+        {path: "/message-02", element: <AmbassadorBd/>},
+        {path: "/message-03", element: <AmbassadorPh/>},
         { path: "/membership", element: <Membership/>},
         { path: "/news-publication", element: <NewsAndPublication/>},
         { path: "/gallery", element: <Gallery/>},
