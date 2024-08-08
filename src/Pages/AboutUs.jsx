@@ -146,7 +146,7 @@ const AboutUs = () => {
               >
                 &gt;
               </button>
-              
+
               {/* Indicators */}
               <div className="absolute flex space-x-2 transform -translate-x-1/2 bottom-4 left-1/2">
                 {sliderImages.map((_, index) => (
